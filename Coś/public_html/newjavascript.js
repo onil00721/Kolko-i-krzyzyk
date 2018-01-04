@@ -15,23 +15,46 @@ var dziewiec= false;
 //var stanKratki= $("#1").value; 
 //document.write("#1");
 
-$( ".kratka " ).click(function() {         
-  
-    if  (jeden==false)  {  
+
+function myFun(){  
     
-        if  (znak == false)  {             
-            $( this ).html( '<i class=" icon-circle-empty" style="opacity: 1;"></i>'); // wstawia kółko O    
+        if  (znak == false)  {  
+           
+            $( "#1").html( '<i class=" icon-circle-empty" style="opacity: 1;"></i>'); // wstawia kółko O    
+            
              znak = true; 
             }
 
         else{                
-            $( this ).html( '<i class="demo-icon icon-cancel" style="opacity: 1;"></i>');//X
+            $( "#1" ).html( '<i class="demo-icon icon-cancel" style="opacity: 1;"></i>');//X
              znak = false; 
              } 
-        console.log(jeden);
-        
+        console.log(jeden + "tot tu"); 
+       
     }
-    });
+
+
+
+
+
+
+$( "#1" ).click(function() {   
+
+
+if ( jeden==false){
+  myFun();
+     console.log("myFUN");
+    
+    }
+else{
+    console.log("end");
+}
+});
+
+
+
+
+
                 
    
     $('#1').click(function() {
@@ -40,12 +63,12 @@ $( ".kratka " ).click(function() {
 
      $('#2').click(function() {
        dwa=true; 
-          console.log("2");
+         
      })
 
      $('#3').click(function() {
        trzy=true;   
-          console.log("3");
+         
      })
 
      $('#4').click(function() {
