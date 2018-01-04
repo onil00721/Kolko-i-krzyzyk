@@ -1,19 +1,87 @@
 
-var kolejka= false; // false= wstaw kółko, true wstaw krzyżyk
+var znak= false; // false= wstaw kółko, true wstaw krzyżyk
 
-$( ".kratka " ).click(function() {     
+var jeden= false;
+var dwa= false;
+var trzy= false;
+var cztery= false;
+var piec= false;
+var szesc= false;
+var siedem= false;
+var osiem= false;
+var dziewiec= false;
+
+
+//var stanKratki= $("#1").value; 
+//document.write("#1");
+
+$( ".kratka " ).click(function() {         
   
-      if ( kolejka == false ){             
-        $( this ).html( '<i class=" icon-circle-empty" style="opacity: 1;"></i>'); // wstawia kółko O    
-         kolejka = true; 
-        }
+    if  (jeden==false)  {  
     
-    else{                
-        $( this ).html( '<i class="demo-icon icon-cancel" style="opacity: 1;"></i>');//X
-         kolejka = false; 
-         }
-    
-});
+        if  (znak == false)  {             
+            $( this ).html( '<i class=" icon-circle-empty" style="opacity: 1;"></i>'); // wstawia kółko O    
+             znak = true; 
+            }
+
+        else{                
+            $( this ).html( '<i class="demo-icon icon-cancel" style="opacity: 1;"></i>');//X
+             znak = false; 
+             } 
+        console.log(jeden);
+        
+    }
+    });
                 
- 
-                      
+   
+    $('#1').click(function() {
+     jeden=true;     
+    })
+
+     $('#2').click(function() {
+       dwa=true; 
+          console.log("2");
+     })
+
+     $('#3').click(function() {
+       trzy=true;   
+          console.log("3");
+     })
+
+     $('#4').click(function() {
+      cztery=true;    
+     })
+
+     $('#5').click(function() {
+      piec=true;    
+     })
+    
+     $('#6').click(function() {
+      szesc=true;    
+     })
+
+    $('#7').click(function() {
+      siedem=true;    
+     })
+
+     $('#8').click(function() {
+      osiem=true;    
+     })
+
+     $('#9').click(function() {
+      dziewiec=true;    
+     })
+       
+              
+              
+              
+              
+   //console.log('test');
+   
+         
+
+
+
+//$('input#guzik').on('click', function() {
+ //   console.log('test');
+//})
