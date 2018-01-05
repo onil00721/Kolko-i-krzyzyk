@@ -1,7 +1,7 @@
 
 var znak= false; // false= wstaw kółko, true wstaw krzyżyk
 
-var jeden= false;
+var jeden= false; // Blokuje możliwość wstawienia więcej niż jednekgo znaku do jednego pola 
 var dwa= false;
 var trzy= false;
 var cztery= false;
@@ -11,100 +11,181 @@ var siedem= false;
 var osiem= false;
 var dziewiec= false;
 
+var jeden_Wygrana;
+var dwa_Wygrana;
+var trzy_Wygrana;
+var cztery_Wygrana;
+var piec_Wygrana;
+var szesc_Wygrana;
+var siedem_Wygrana;
+var osiem_Wygrana;
+var dziewiec_Wygrana ;
 
-//var stanKratki= $("#1").value; 
-//document.write("#1");
+var zwracamZnak;
+
+var nrKratki;  //Zwraca numer kratki do której się odwołujemy
 
 
-function myFun(){  
+
+
+function myFun(){  //funkcja wstawiająca odpowiedni znak do kratki
     
-        if  (znak == false)  {  
-           
-            $( "#1").html( '<i class=" icon-circle-empty" style="opacity: 1;"></i>'); // wstawia kółko O    
-            
+        if  (znak == false)  {             
+            $(nrKratki).html( '<i class=" icon-circle-empty" style="opacity: 1;"></i>'); // wstawia kółko O               
              znak = true; 
+            jeden_Wygrana=false;
+            
+            console.log(jeden_Wygrana);
+            
             }
 
         else{                
-            $( "#1" ).html( '<i class="demo-icon icon-cancel" style="opacity: 1;"></i>');//X
+            $( nrKratki ).html( '<i class="icon-cancel" style="opacity: 1;"></i>');// wstawia X
              znak = false; 
              } 
-        console.log(jeden + "tot tu"); 
+       
        
     }
 
 
-
-
-
-
-$( "#1" ).click(function() {   
-
-
-if ( jeden==false){
-  myFun();
-     console.log("myFUN");
+function jakiZnak(){    //Wzraca wartość czy O czy X
     
-    }
-else{
-    console.log("end");
-}
+    $( nrKratki).click(function() {  
+      var htmlString = $( this ).html();
+    
+    if ( (htmlString) ==  '<i class=" icon-circle-empty" style="opacity: 1;"></i>' ){     
+        console.log("O");
+        
+      
+        zwracamZnak=23;
+         console.log(zwracamZnak);
+    }  
+        else{
+            console.log("X");
+        }
+    
+        });
+        }
+    
+
+
+
+
+
+
+
+
+
+
+
+$( "#1" ).click(function() {     //akcja dla kratki 1
+nrKratki='#1';
+   
+    
+    if ( jeden==false){    
+        myFun();          //wstawiamy O albo X
+    }  
+     jeden=true;
+    jakiZnak();     //Zwraca informację o wstawionym znaku do kratki 
+    
+    console.log(nrKratki);
+    
+    
+     
+});
+
+
+
+$( "#2" ).click(function() {     
+nrKratki='#2';
+    
+    if ( dwa==false){    
+        myFun();          
+    }   
+    dwa=true;
+});
+
+
+
+$( "#3" ).click(function() {     
+nrKratki='#3';
+    
+    if ( trzy==false){    
+        myFun();          
+    }   
+    trzy=true;
+});
+
+
+
+$( "#4" ).click(function() {     
+nrKratki='#4';
+    
+    if ( cztery==false){    
+        myFun();          
+    }  
+    cztery=true;
+});
+
+
+
+$( "#5" ).click(function() {     
+nrKratki='#5';
+    
+    if ( piec==false){    
+        myFun();          
+    }   
+    piec=true;
+});
+
+
+
+$( "#6" ).click(function() {     
+nrKratki='#6';
+    
+    if ( szesc==false){    
+        myFun();          
+    }  
+    szesc=true;
+});
+
+
+
+$( "#7" ).click(function() {     
+nrKratki='#7';
+    
+    if ( siedem==false){    
+        myFun();          
+    }  
+    siedem=true;
+});
+
+
+
+$( "#8" ).click(function() {     
+nrKratki='#8';
+    
+    if ( osiem==false){    
+        myFun();          
+    }  
+    osiem=true;
+});
+
+
+
+$( "#9" ).click(function() {     
+nrKratki='#9';
+    
+    if ( dziewiec==false){    
+        myFun();          
+    }  
+    dziewiec=true;
 });
 
 
 
 
 
-                
-   
-    $('#1').click(function() {
-     jeden=true;     
-    })
-
-     $('#2').click(function() {
-       dwa=true; 
-         
-     })
-
-     $('#3').click(function() {
-       trzy=true;   
-         
-     })
-
-     $('#4').click(function() {
-      cztery=true;    
-     })
-
-     $('#5').click(function() {
-      piec=true;    
-     })
+              
+              
     
-     $('#6').click(function() {
-      szesc=true;    
-     })
-
-    $('#7').click(function() {
-      siedem=true;    
-     })
-
-     $('#8').click(function() {
-      osiem=true;    
-     })
-
-     $('#9').click(function() {
-      dziewiec=true;    
-     })
-       
-              
-              
-              
-              
-   //console.log('test');
-   
-         
-
-
-
-//$('input#guzik').on('click', function() {
- //   console.log('test');
-//})
