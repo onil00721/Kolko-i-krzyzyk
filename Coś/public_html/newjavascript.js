@@ -23,6 +23,8 @@ var dziewiec_Wygrana ;
 
 var nrKratki=0;  //Zwraca numer kratki do której się odwołujemy
 
+var koniecKmunuikatu=false; //jeśli true to blokuje wlyświetlanie aktyalnego zwycięzcy 
+    
 
 
 
@@ -121,108 +123,116 @@ function ktoWygral(){
                                                                             // Jeśli wygrywa x
    if( jeden_Wygrana && dwa_Wygrana && trzy_Wygrana == true){ //true = X
       komunikat();
-       koniecGry();
+      
      }
     
      else if  ( cztery_Wygrana && piec_Wygrana && szesc_Wygrana == true){
          komunikat();
-         koniecGry();
+         
      }
     
     else if  ( siedem_Wygrana && osiem_Wygrana && dziewiec_Wygrana == true){
         komunikat();
-        koniecGry();
+        
      }
     
      else if  ( jeden_Wygrana && cztery_Wygrana && siedem_Wygrana == true){
          komunikat();
-         koniecGry();
+       
      }
     
      else if  ( dwa_Wygrana && piec_Wygrana && osiem_Wygrana == true){
          komunikat();
-         koniecGry();
+         
      }
     
      else if  ( trzy_Wygrana && szesc_Wygrana && dziewiec_Wygrana == true){
          komunikat();
-         koniecGry();
+        
      }
     
      else if  ( jeden_Wygrana && piec_Wygrana && dziewiec_Wygrana == true){
          komunikat();
-         koniecGry();
+        
      }
     
     else if  ( trzy_Wygrana && piec_Wygrana && siedem_Wygrana == true){
         komunikat();
-        koniecGry();
+        
      } 
     
                                                                                                     //jeśli wygrywa O 
     
-   else if( (jeden_Wygrana == false) && (dwa_Wygrana == false) && (trzy_Wygrana == false)){          //true = X
+   else if( (jeden_Wygrana == false) && (dwa_Wygrana == false) && (trzy_Wygrana == false)){          //false = O
        komunikat2();
-       koniecGry();
+      
      }
     
     else if  ( (cztery_Wygrana == false) && (piec_Wygrana == false)  && (szesc_Wygrana == false)){
         komunikat2();
-        koniecGry();
+       
      }
     
     else if  ( (siedem_Wygrana == false) && (osiem_Wygrana == false) && (dziewiec_Wygrana == false)){
         komunikat2();
-        koniecGry();
+      
      }
     
      else if  ( (jeden_Wygrana == false) && (cztery_Wygrana == false) && (siedem_Wygrana == false)){
          komunikat2();
-         koniecGry();
+       
      }
     
      else if  ( (dwa_Wygrana == false) && (piec_Wygrana == false) && (osiem_Wygrana == false)){
          komunikat2();
-         koniecGry();
+        
      }
     
      else if  ( (trzy_Wygrana == false) && (szesc_Wygrana == false) && (dziewiec_Wygrana == false)){
          komunikat2();
-         koniecGry();
+        
      }
     
      else if  ( (jeden_Wygrana == false) && (piec_Wygrana == false) && (dziewiec_Wygrana == false)){
          komunikat2();
-         koniecGry();
+       
      }
     
     else if  ( (trzy_Wygrana == false) && (piec_Wygrana == false) && (siedem_Wygrana == false)){
         komunikat2();
-        koniecGry();
      }
     
 }
     
 function komunikat(){
     
-     $("#Komunikat").html( "<i>Wygrywa X</i>");
+      if (koniecKmunuikatu== false){
+    
+    $("#Komunikat").html( "<i>Wygrywa X</i>");
+     koniecGry();
+      }
     
 }
 
 
 function komunikat2(){
-     $("#Komunikat").html( "Wygrywa O");
     
-      var htmlStriing = $(komunikat).html();    
-    console.log(htmlStriing);
-    if ( htmlStriing ==  "<i>Wygrywa X</i>" ){  
-         $("#Komunikat").html( "Wygrywa XXXXXXXXXX");
-}
+    if (koniecKmunuikatu== false){
+     $("#Komunikat").html( "Wygrywa O");
+        koniecGry();
+      }
 }
 
+
+function remis(){
+    if ((koniecKmunuikatu==false) &&  (jeden==true) && (dwa==true) && (trzy==true) && (cztery==true) && (piec==true) && (szesc==true) && (siedem==true) && (osiem==true) && (dziewiec==true)){
+         $("#Komunikat").html( "Remis, nikt nie wygrywa"); 
+   
+    }
+   }
 
 function koniecGry(){
-jeden= true;  
+ jeden= true;  
  dwa=   true;  
  trzy=  true  ;
  cztery= true ;
@@ -231,7 +241,8 @@ jeden= true;
  siedem=true ;
  osiem= true;
  dziewiec= true;
-    
+
+ koniecKmunuikatu=true;  
 }
 
 
@@ -239,7 +250,7 @@ jeden= true;
 
 $( "#1" ).click(function() {     //akcja dla kratki 1
       nrKratki="#1";   
-       
+        
     if ( jeden==false){    
         myFun();          //wstawiamy O albo X
     } 
@@ -247,21 +258,21 @@ $( "#1" ).click(function() {     //akcja dla kratki 1
      jeden=true;    //blokuje możliwość ponownego wstawienia znaku 
      jakiZnak();     //Zwraca informację o wstawionym znaku do kratki w postaci true albo false   
      ktoWygral();    //Wyświetla komunikat o tym kto właśnie wygrał 
-    
+     remis();
 });
 
 
 $( "#2" ).click(function() {    
       nrKratki="#2";   
-       
-    if ( dwa==false){    
+
+if ( dwa==false){    
         myFun();         
     } 
     
      dwa=true;    
      jakiZnak();     
      ktoWygral();   
-    
+    remis();
 });
 
 $( "#3" ).click(function() {    
@@ -274,7 +285,7 @@ $( "#3" ).click(function() {
      trzy=true;    
      jakiZnak();     
      ktoWygral();   
-    console.log(trzy_Wygrana);
+    remis();
 });
 
 $( "#4" ).click(function() {    
@@ -287,8 +298,7 @@ $( "#4" ).click(function() {
      cztery=true;    
      jakiZnak();     
      ktoWygral();   
-console.log(cztery_Wygrana);
-    
+    remis();
 });
 
 $( "#5" ).click(function() {    
@@ -301,8 +311,7 @@ $( "#5" ).click(function() {
      piec=true;    
      jakiZnak();     
      ktoWygral();   
-console.log(piec_Wygrana);
-    
+    remis();
 });
 
 $( "#6" ).click(function() {    
@@ -315,7 +324,7 @@ $( "#6" ).click(function() {
      szesc=true;    
      jakiZnak();     
      ktoWygral();   
-
+    remis();
     
 });
 
@@ -329,7 +338,7 @@ $( "#7" ).click(function() {
      siedem=true;    
      jakiZnak();     
      ktoWygral();   
-
+    remis();
     
 });
 
@@ -343,7 +352,7 @@ $( "#8" ).click(function() {
      osiem=true;    
      jakiZnak();     
      ktoWygral();   
-
+    remis();
     
 });
 
@@ -357,7 +366,7 @@ $( "#9" ).click(function() {
      dziewiec=true;    
      jakiZnak();     
      ktoWygral();   
-
+    remis();
     
 });
 
