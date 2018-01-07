@@ -62,13 +62,13 @@ function jakiZnak(){    //Wzraca wartość czy O czy X
                     cztery_Wygrana=false;
                 }
              else if (nrKratki=="#5"){
-                    piec_Wygrana==false;
+                    piec_Wygrana=false;
                 }
              else if (nrKratki=="#6"){
                     szesc_Wygrana=false;
                 }
              else if (nrKratki=="#7"){
-                    sziedem_Wygrana=false;
+                    siedem_Wygrana=false;
                 }
              else if (nrKratki=="#8"){
                     osiem_Wygrana=false;
@@ -85,7 +85,7 @@ function jakiZnak(){    //Wzraca wartość czy O czy X
                     jeden_Wygrana=true;
                 }
         
-             else if (nrKratki==="#2"){
+             else if (nrKratki=="#2"){
                     dwa_Wygrana=true;
                 }
              else if (nrKratki=="#3"){
@@ -101,7 +101,7 @@ function jakiZnak(){    //Wzraca wartość czy O czy X
                     szesc_Wygrana=true;
                 }
              else if (nrKratki=="#7"){
-                    sziedem_Wygrana=true;
+                    siedem_Wygrana=true;
                 }
              else if (nrKratki=="#8"){
                     osiem_Wygrana=true;
@@ -118,18 +118,122 @@ function jakiZnak(){    //Wzraca wartość czy O czy X
 
 
 function ktoWygral(){
+                                                                            // Jeśli wygrywa x
+   if( jeden_Wygrana && dwa_Wygrana && trzy_Wygrana == true){ //true = X
+      komunikat();
+       koniecGry();
+     }
     
-    if( jeden_Wygrana && dwa_Wygrana && trzy_Wygrana == true){
-        console.log("Wygrał X 123");
-    }
+     else if  ( cztery_Wygrana && piec_Wygrana && szesc_Wygrana == true){
+         komunikat();
+         koniecGry();
+     }
     
-    else if(){
-             console.log("Ktoś chyba wygrał");
-            }
+    else if  ( siedem_Wygrana && osiem_Wygrana && dziewiec_Wygrana == true){
+        komunikat();
+        koniecGry();
+     }
     
+     else if  ( jeden_Wygrana && cztery_Wygrana && siedem_Wygrana == true){
+         komunikat();
+         koniecGry();
+     }
     
+     else if  ( dwa_Wygrana && piec_Wygrana && osiem_Wygrana == true){
+         komunikat();
+         koniecGry();
+     }
+    
+     else if  ( trzy_Wygrana && szesc_Wygrana && dziewiec_Wygrana == true){
+         komunikat();
+         koniecGry();
+     }
+    
+     else if  ( jeden_Wygrana && piec_Wygrana && dziewiec_Wygrana == true){
+         komunikat();
+         koniecGry();
+     }
+    
+    else if  ( trzy_Wygrana && piec_Wygrana && siedem_Wygrana == true){
+        komunikat();
+        koniecGry();
+     } 
+    
+                                                                                                    //jeśli wygrywa O 
+    
+   else if( (jeden_Wygrana == false) && (dwa_Wygrana == false) && (trzy_Wygrana == false)){          //true = X
+       komunikat2();
+       koniecGry();
+     }
+    
+    else if  ( (cztery_Wygrana == false) && (piec_Wygrana == false)  && (szesc_Wygrana == false)){
+        komunikat2();
+        koniecGry();
+     }
+    
+    else if  ( (siedem_Wygrana == false) && (osiem_Wygrana == false) && (dziewiec_Wygrana == false)){
+        komunikat2();
+        koniecGry();
+     }
+    
+     else if  ( (jeden_Wygrana == false) && (cztery_Wygrana == false) && (siedem_Wygrana == false)){
+         komunikat2();
+         koniecGry();
+     }
+    
+     else if  ( (dwa_Wygrana == false) && (piec_Wygrana == false) && (osiem_Wygrana == false)){
+         komunikat2();
+         koniecGry();
+     }
+    
+     else if  ( (trzy_Wygrana == false) && (szesc_Wygrana == false) && (dziewiec_Wygrana == false)){
+         komunikat2();
+         koniecGry();
+     }
+    
+     else if  ( (jeden_Wygrana == false) && (piec_Wygrana == false) && (dziewiec_Wygrana == false)){
+         komunikat2();
+         koniecGry();
+     }
+    
+    else if  ( (trzy_Wygrana == false) && (piec_Wygrana == false) && (siedem_Wygrana == false)){
+        komunikat2();
+        koniecGry();
+     }
     
 }
+    
+function komunikat(){
+    
+     $("#Komunikat").html( "<i>Wygrywa X</i>");
+    
+}
+
+
+function komunikat2(){
+     $("#Komunikat").html( "Wygrywa O");
+    
+      var htmlStriing = $(komunikat).html();    
+    console.log(htmlStriing);
+    if ( htmlStriing ==  "<i>Wygrywa X</i>" ){  
+         $("#Komunikat").html( "Wygrywa XXXXXXXXXX");
+}
+}
+
+
+function koniecGry(){
+jeden= true;  
+ dwa=   true;  
+ trzy=  true  ;
+ cztery= true ;
+ piec= true;
+ szesc= true;
+ siedem=true ;
+ osiem= true;
+ dziewiec= true;
+    
+}
+
 
     
 
@@ -142,108 +246,121 @@ $( "#1" ).click(function() {     //akcja dla kratki 1
     
      jeden=true;    //blokuje możliwość ponownego wstawienia znaku 
      jakiZnak();     //Zwraca informację o wstawionym znaku do kratki w postaci true albo false   
-     ktoWygral();   
-
+     ktoWygral();    //Wyświetla komunikat o tym kto właśnie wygrał 
     
 });
 
 
-$( "#2" ).click(function() {     //akcja dla kratki 1
+$( "#2" ).click(function() {    
       nrKratki="#2";   
        
     if ( dwa==false){    
-        myFun();          //wstawiamy O albo X
+        myFun();         
     } 
     
-     dwa=true;    //blokuje możliwość ponownego wstawienia znaku 
-     jakiZnak();     //Zwraca informację o wstawionym znaku do kratki w postaci true albo false   
+     dwa=true;    
+     jakiZnak();     
      ktoWygral();   
-
     
 });
 
-
-$( "#3" ).click(function() {     //akcja dla kratki 1
+$( "#3" ).click(function() {    
       nrKratki="#3";   
        
     if ( trzy==false){    
-        myFun();          //wstawiamy O albo X
+        myFun();         
     } 
     
-     trzy=true;    //blokuje możliwość ponownego wstawienia znaku 
-     jakiZnak();     //Zwraca informację o wstawionym znaku do kratki w postaci true albo false   
+     trzy=true;    
+     jakiZnak();     
      ktoWygral();   
-console.log(jeden_Wygrana);
-console.log(dwa_Wygrana);
-console.log(trzy_Wygrana);
-    
+    console.log(trzy_Wygrana);
 });
 
-
-
-$( "#4" ).click(function() {     
-nrKratki='#4';
-    
+$( "#4" ).click(function() {    
+      nrKratki="#4";   
+       
     if ( cztery==false){    
-        myFun();          
-    }  
-    cztery=true;
+        myFun();         
+    } 
+    
+     cztery=true;    
+     jakiZnak();     
+     ktoWygral();   
+console.log(cztery_Wygrana);
+    
 });
 
-
-
-$( "#5" ).click(function() {     
-nrKratki='#5';
-    
+$( "#5" ).click(function() {    
+      nrKratki="#5";   
+       
     if ( piec==false){    
-        myFun();          
-    }   
-    piec=true;
+        myFun();         
+    } 
+    
+     piec=true;    
+     jakiZnak();     
+     ktoWygral();   
+console.log(piec_Wygrana);
+    
 });
 
-
-
-$( "#6" ).click(function() {     
-nrKratki='#6';
-    
+$( "#6" ).click(function() {    
+      nrKratki="#6";   
+       
     if ( szesc==false){    
-        myFun();          
-    }  
-    szesc=true;
+        myFun();         
+    } 
+    
+     szesc=true;    
+     jakiZnak();     
+     ktoWygral();   
+
+    
 });
 
-
-
-$( "#7" ).click(function() {     
-nrKratki='#7';
-    
+$( "#7" ).click(function() {    
+      nrKratki="#7";   
+       
     if ( siedem==false){    
-        myFun();          
-    }  
-    siedem=true;
+        myFun();         
+    } 
+    
+     siedem=true;    
+     jakiZnak();     
+     ktoWygral();   
+
+    
 });
 
-
-
-$( "#8" ).click(function() {     
-nrKratki='#8';
-    
+$( "#8" ).click(function() {    
+      nrKratki="#8";   
+       
     if ( osiem==false){    
-        myFun();          
-    }  
-    osiem=true;
-});
-
-
-
-$( "#9" ).click(function() {     
-nrKratki='#9';
+        myFun();         
+    } 
     
-    if ( dziewiec==false){    
-        myFun();          
-    }  
-    dziewiec=true;
+     osiem=true;    
+     jakiZnak();     
+     ktoWygral();   
+
+    
 });
+
+$( "#9" ).click(function() {    
+      nrKratki="#9";   
+       
+    if ( dziewiec==false){    
+        myFun();         
+    } 
+    
+     dziewiec=true;    
+     jakiZnak();     
+     ktoWygral();   
+
+    
+});
+
 
 
 
