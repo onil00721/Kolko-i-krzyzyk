@@ -3,69 +3,54 @@
 var tab=[];
 var tab2=[];
 var tab3=[];
- var z=0;
+ 
+var z=0;
+
   tab[0]=18
   tab[1]=18   
   tab[2]=15  
   tab[3]=12
   tab[4]=12  
-  tab[5]=14  
-//tab.sort();
+  tab[5]=13 
+  tab[6]=14  
+  tab[7]=15  
+  tab[8]=16  
+  tab[9]=21  
+  tab[10]=18  
+tab.sort();
+ console.log(tab);
+     //  tab.slice(1,4);                                                                       
+var t=1;
+var a,b,e,f,g;
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 
 
 
-
-
-    for (x=0; x<tab.length; x++){
-        
-       //  if 
-        
-          
-          
-//if(tab[x]==tab2[x]){
-  //  console.log("równe");
-//}
-   tab2[x]=tab[x];
-        
-         for (y=0; y<7; y++){
-             
-             
-             
-             if (tab[y]==tab2[x]){
-                 
-                 tab3[x]=tab[x];
-                //z++;
-         
-    /* console.log(tab3[0]+"ggggggggg");
-     console.log(tab3[1]);
-     console.log(tab3[2]);
-     console.log(tab3[3]);
-     console.log(tab3[4]);
-     console.log(tab3[5]);
-     console.log(tab3[6]);
-      */       }
-    
-     //console.log(tab[x]);
-        
-    }
+for( t=0; t<tab.length; t++){
+    var a;
+    var b;
+    e=t+1;
+f=t+1;
+g=t+2;
+   a =tab.slice(t,e);
+      b = tab.slice(f,g);
+    a = parseInt(a);
+    b = parseInt(b);
+   
        
- 
-    // console.log("X<2");
-    
-        
-    
-    }
- for (var a=0; a<tab3.length; a++){
-   console.log(tab3[a]);
-     
- }
-     
-console.log(tab3);
+        if(a!=b){
+   
+    console.log(a + "   a");  
+    }   
+   }
 
-//var cos= tab3.lengthh;
-//console.log(tab2.length);
-     
+
+   
         
+      
+ 
+
+
+     
+      
       
