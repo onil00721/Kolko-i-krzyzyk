@@ -1,0 +1,39 @@
+
+
+var t=1;
+var a,b,e,f,g;//zmienne potrzebne do sortowania tablicy 2
+var tab=[]; //tablica przechowuj¹ca informacje o zape³nionych indeksach
+var tab2=[];//tablica zawieraj¹ca numery zwyciêzkich indeksów
+
+for (var i=1; i<257; i++){
+tab[i]=i;
+
+  tab[87]=1000  
+  tab[103]=1000  
+  tab[119]=1000  
+  tab[135]=1000  
+  tab[151]=1000
+    
+    
+}
+
+
+for (var k=1; k<=192 ; k++){  
+       var l=0;
+        var h=0;
+        
+ for (var j=k; j<= k+65; j+=16){             //przeszukujem pola pionowo po 5 kratek i z przesuniêciem w bok    
+    
+     if (tab[j]==1000){       
+         tab2[h]=j;       
+         h++;   
+         l++;
+         
+         if (l==5){                //zwraca informacje o numerach zwyciêzkich pól 
+             console.log("hit");
+              console.log(tab2);
+         }
+      }
+    }
+}
+
