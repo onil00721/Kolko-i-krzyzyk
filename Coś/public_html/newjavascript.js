@@ -23,7 +23,7 @@ var dziewiec_Wygrana ;
 
 var nrKratki=0;  //Zwraca numer kratki do której się odwołujemy
 
-var koniecKmunuikatu=false; //jeśli true to blokuje wlyświetlanie aktyalnego zwycięzcy 
+var koniecKmunuikatu=false; //jeśli true to blokuje wlyświetlanie aktualnego zwycięzcy 
     
 
 
