@@ -27,7 +27,10 @@ var koniecKmunuikatu = false; //jeśli true to blokuje wlyświetlanie aktualnego
 function myFun() { //funkcja wstawiająca odpowiedni znak do kratki
 
     if (znak == false) {
-        $(nrKratki).html('<i class=" icon-circle-empty" style="opacity: 1;"></i>'); // wstawia kółko O               
+       
+        $(nrKratki).html('<i class=" icon-circle-empty" style="opacity: 1;"></i>'); // wstawia kółko O   
+        $(nrKratki).animate({color: "blue"});
+        
         znak = true;
 
     } else {
@@ -295,102 +298,73 @@ $("#9").click(function () {
 
 function boot() {
 
-    
-     if (piec == false) {
+
+    if (piec == false) {
         nrKratki = "#5";
         myFun();
         piec = true;
         jakiZnak();
         ktoWygral();
         remis();
-    }
-    
-     else if (trzy == false) {
+    } else if (trzy == false) {
         nrKratki = "#3";
         myFun();
         trzy = true;
         jakiZnak();
         ktoWygral();
         remis();
-    }
-    
-    
-     else if (dziewiec == false) {
+    } else if (dziewiec == false) {
         nrKratki = "#9";
         myFun();
         dziewiec = true;
         jakiZnak();
         ktoWygral();
         remis();
-    }
-    
-    else if (jeden == false) {
+    } else if (jeden == false) {
         nrKratki = "#1";
         myFun();
         jeden = true;
         jakiZnak();
         ktoWygral();
         remis();
-    }
-    else if (dwa == false) {
+    } else if (dwa == false) {
         nrKratki = "#2";
         myFun();
         dwa = true;
         jakiZnak();
         ktoWygral();
         remis();
-    } 
-    
-     else if (szesc == false) {
+    } else if (szesc == false) {
         nrKratki = "#6";
         myFun();
         szesc = true;
         jakiZnak();
         ktoWygral();
         remis();
-    }
-    
-    
-    
-    
-    else if (siedem == false) {
+    } else if (siedem == false) {
         nrKratki = "#7";
         myFun();
         siedem = true;
         jakiZnak();
         ktoWygral();
         remis();
-    }
-    
-    
-    
-    
-    else if (cztery == false) {
+    } else if (cztery == false) {
         nrKratki = "#4";
         myFun();
         cztery = true;
         jakiZnak();
         ktoWygral();
         remis();
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    else if (osiem == false) {
+    } else if (osiem == false) {
         nrKratki = "#8";
         myFun();
         osiem = true;
         jakiZnak();
         ktoWygral();
         remis();
-    } 
-    
-    
-    
-   
+    }
+
+
+
+
 }
