@@ -3,6 +3,7 @@ body{
    }
    #calosc{
           padding:100px;
+       min-width: 450px;
    }
    .rzad{
 
@@ -13,13 +14,15 @@ body{
        width: 100px;
        height:100px;
         display: inline-block;
-        background: white;   
+          
         margin-bottom: 5px;
         text-align: center;
        line-height: 100px;
        font-size:50px;
        
-       
+       background: linear-gradient(to bottom right, white , #b5bdc9);
+       border-radius: 20px;
+        box-shadow: 2px 2px 4px #b5bdc9;
      }
      
      .kratka i{
@@ -27,8 +30,22 @@ body{
          
      }
 
+.kratka:hover{
+    cursor: pointer;
+    
+}
 
 
+
+
+.rzad > #1 > i{
+    
+}
+
+
+#Komunikat{
+     text-align: center;
+}
      
      
     
