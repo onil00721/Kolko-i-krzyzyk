@@ -295,64 +295,27 @@ $("#9").click(function () {
 
 function boot() {
 
-    console.log("click");
-    if (jeden == false) {
-        nrKratki = "#1";
-        myFun();
-        jeden = true;
-        jakiZnak();
-        ktoWygral();
-        remis();
-    } else if (dwa == false) {
-        nrKratki = "#2";
-        myFun();
-        dwa = true;
-        jakiZnak();
-        ktoWygral();
-        remis();
-    } else if (trzy == false) {
-        nrKratki = "#3";
-        myFun();
-        trzy = true;
-        jakiZnak();
-        ktoWygral();
-        remis();
-    } else if (cztery == false) {
-        nrKratki = "#4";
-        myFun();
-        cztery = true;
-        jakiZnak();
-        ktoWygral();
-        remis();
-    } else if (piec == false) {
+    
+     if (piec == false) {
         nrKratki = "#5";
         myFun();
         piec = true;
         jakiZnak();
         ktoWygral();
         remis();
-    } else if (szesc == false) {
-        nrKratki = "#6";
+    }
+    
+     else if (trzy == false) {
+        nrKratki = "#3";
         myFun();
-        szesc = true;
+        trzy = true;
         jakiZnak();
         ktoWygral();
         remis();
-    } else if (siedem == false) {
-        nrKratki = "#7";
-        myFun();
-        siedem = true;
-        jakiZnak();
-        ktoWygral();
-        remis();
-    } else if (osiem == false) {
-        nrKratki = "#8";
-        myFun();
-        osiem = true;
-        jakiZnak();
-        ktoWygral();
-        remis();
-    } else if (dziewiec == false) {
+    }
+    
+    
+     else if (dziewiec == false) {
         nrKratki = "#9";
         myFun();
         dziewiec = true;
@@ -360,4 +323,74 @@ function boot() {
         ktoWygral();
         remis();
     }
+    
+    else if (jeden == false) {
+        nrKratki = "#1";
+        myFun();
+        jeden = true;
+        jakiZnak();
+        ktoWygral();
+        remis();
+    }
+    else if (dwa == false) {
+        nrKratki = "#2";
+        myFun();
+        dwa = true;
+        jakiZnak();
+        ktoWygral();
+        remis();
+    } 
+    
+     else if (szesc == false) {
+        nrKratki = "#6";
+        myFun();
+        szesc = true;
+        jakiZnak();
+        ktoWygral();
+        remis();
+    }
+    
+    
+    
+    
+    else if (siedem == false) {
+        nrKratki = "#7";
+        myFun();
+        siedem = true;
+        jakiZnak();
+        ktoWygral();
+        remis();
+    }
+    
+    
+    
+    
+    else if (cztery == false) {
+        nrKratki = "#4";
+        myFun();
+        cztery = true;
+        jakiZnak();
+        ktoWygral();
+        remis();
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    else if (osiem == false) {
+        nrKratki = "#8";
+        myFun();
+        osiem = true;
+        jakiZnak();
+        ktoWygral();
+        remis();
+    } 
+    
+    
+    
+   
 }
